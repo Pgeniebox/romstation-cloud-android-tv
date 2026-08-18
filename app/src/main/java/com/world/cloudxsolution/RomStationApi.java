@@ -158,7 +158,7 @@ public class RomStationApi {
         params.put("auth", authEncrypted);
         params.put("title", title);
         params.put("description", "");
-        params.put("password", "@sefthuko88");
+        params.put("password", "");
         params.put("slots", 1);
         params.put("game_file_id", gameFileId);
         params.put("locked", 1);
@@ -170,7 +170,7 @@ public class RomStationApi {
         params.put("region", 0);
         params.put("framerate", 30);
         params.put("resolution", 0);
-        params.put("bitrate", 15000);
+        params.put("bitrate", 5000);
 
         request.setParams(params, RequestNetworkController.REQUEST_PARAM);
         request.startRequestNetwork(RequestNetworkController.POST, getUrlWithVersion("https://www.romstation.fr/romstation/scripts/multiplayer/create_lobby.php"), "create_lobby", listener);
