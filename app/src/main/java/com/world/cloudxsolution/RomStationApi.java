@@ -157,7 +157,7 @@ public class RomStationApi {
         HashMap<String, Object> params = new HashMap<>();
         params.put("auth", authEncrypted);
         params.put("title", title);
-        params.put("description", "");
+        params.put("description", " ");
         params.put("password", "");
         params.put("slots", 1);
         params.put("game_file_id", gameFileId);
