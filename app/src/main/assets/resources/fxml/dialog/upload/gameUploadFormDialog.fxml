@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import org.romstation.application.view.control.cell.entity.SystemListCell?>
+<?import org.romstation.application.view.control.cell.entity.SystemListCell.Factory ?>
+<?import org.romstation.application.view.control.cell.entity.LanguageListCell.Factory ?>
+<?import org.romstation.application.view.control.cell.entity.GenreListCell.Factory ?>
+<?import org.romstation.application.view.control.cell.entity.SeriesListCell.Factory?>
+
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tooltip?>
+<?import org.romstation.application.view.control.PathField?>
+<DialogPane fx:id="dialogPane" headerText="%gameUploadFormDialog.header" id="game-upload-form-dialog" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.bQ">
+    <content>
+        <ScrollPane fitToWidth="true">
+            <content>
+                <GridPane hgap="10.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <HBox styleClass="field-label-container">
+                            <Label text="%gameUploadFormDialog.title" styleClass="title" />
+                            <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                        </HBox>
+                        <TextField fx:id="titleTextField" GridPane.rowIndex="1" />
+                        <HBox styleClass="field-label-container" GridPane.columnIndex="1">
+                            <Label text="%gameUploadFormDialog.system" styleClass="title" />
+                            <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                        </HBox>
+                        <ComboBox fx:id="systemComboBox" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" >
+                            <buttonCell>
+                                <SystemListCell />
+                            </buttonCell>
+                            <cellFactory>
+                                <SystemListCell.Factory />
+                            </cellFactory>
+                        </ComboBox>
+                        <HBox styleClass="field-label-container" GridPane.columnIndex="2">
+                            <Label text="%gameUploadFormDialog.players" styleClass="title" />
+                            <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                        </HBox>
+                        <TextField fx:id="playersTextField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <HBox styleClass="field-label-container" GridPane.rowIndex="2">
+                            <Label text="%gameUploadFormDialog.year" styleClass="title" />
+                            <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                        </HBox>
+                        <TextField fx:id="yearTextField" GridPane.rowIndex="3" />
+                        <HBox styleClass="field-label-container" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <Label text="%gameUploadFormDialog.developer" styleClass="title" />
+                            <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                        </HBox>
+                        <ComboBox fx:id="developersComboBox" editable="true" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="%gameUploadFormDialog.publisher" styleClass="title" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="publishersComboBox" editable="true" maxWidth="1.7976931348623157E308" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <HBox styleClass="field-label-container" GridPane.rowIndex="4">
+                            <Label text="%gameUploadFormDialog.coverImage" styleClass="title" >
+                                <graphic>
+                                    <FontAwesomeIconView styleClass="information" />
+                                </graphic>
+                                <tooltip>
+                                    <Tooltip text="%gameUploadFormDialog.coverImage.tooltip" />
+                                </tooltip>
+                            </Label>
+                            <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                        </HBox>
+                        <PathField fx:id="imagePathField" onAction="#selectImagePath" GridPane.rowIndex="5" />
+                  <TitledPane styleClass="description" collapsible="false" GridPane.columnSpan="2147483647" GridPane.rowIndex="6">
+                      <graphic>
+                          <HBox styleClass="field-label-container">
+                              <Label text="%gameUploadFormDialog.description" styleClass="title" >
+                                  <graphic>
+                                      <FontAwesomeIconView styleClass="information" />
+                                  </graphic>
+                                  <tooltip>
+                                      <Tooltip text="%gameUploadFormDialog.description.tooltip" />
+                                  </tooltip>
+                              </Label>
+                              <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                          </HBox>
+                      </graphic>
+                     <content>
+                        <GridPane vgap="10.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="%gameUploadFormDialog.description.en" styleClass="en">
+                                 <graphic>
+                                            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" />
+                                 </graphic>
+                              </Label>
+                                      <TextArea fx:id="descriptionTextAreaEN" wrapText="true" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                              <Label text="%gameUploadFormDialog.description.fr" styleClass="fr" GridPane.rowIndex="2">
+                                 <graphic>
+                                            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" />
+                                 </graphic>
+                              </Label>
+                                      <TextArea fx:id="descriptionTextAreaFR" prefHeight="100.0" wrapText="true" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                     </content>
+                  </TitledPane>
+                        <TitledPane text="%gameUploadFormDialog.tips" styleClass="tips" collapsible="false" GridPane.columnSpan="2147483647" GridPane.rowIndex="7">
+                            <content>
+                                <GridPane vgap="10.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <Label text="%gameUploadFormDialog.tips.en" styleClass="en">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" />
+                                            </graphic>
+                                        </Label>
+                                        <TextArea fx:id="tipsTextAreaEN" wrapText="true" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+                                        <Label text="%gameUploadFormDialog.tips.fr" styleClass="fr" GridPane.rowIndex="2">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" />
+                                            </graphic>
+                                        </Label>
+                                        <TextArea fx:id="tipsTextAreaFR" prefHeight="100.0" wrapText="true" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+                                    </children>
+                                </GridPane>
+                            </content>
+                        </TitledPane>
+                        <TitledPane collapsible="false" styleClass="file" text="%gameUploadFormDialog.file" GridPane.columnSpan="2147483647" GridPane.rowIndex="8">
+                            <content>
+                                <GridPane hgap="10.0" vgap="10.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <HBox styleClass="field-label-container">
+                                            <Label text="%gameUploadFormDialog.file.name" styleClass="title" >
+                                                <graphic>
+                                                    <FontAwesomeIconView styleClass="information" />
+                                                </graphic>
+                                                <tooltip>
+                                                    <Tooltip text="%gameUploadFormDialog.file.name.tooltip" />
+                                                </tooltip>
+                                            </Label>
+                                            <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                                        </HBox>
+                                        <TextField disable="true" fx:id="fileNameTextField" GridPane.rowIndex="1" />
+                                        <HBox styleClass="field-label-container" GridPane.columnIndex="1">
+                                            <Label text="%gameUploadFormDialog.file.path" styleClass="title" />
+                                            <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                                        </HBox>
+                                        <TextField fx:id="filePathTextField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" >
+                                            <tooltip>
+                                                <Tooltip text="${filePathTextField.text}" />
+                                            </tooltip>
+                                        </TextField>
+                                        <HBox styleClass="field-label-container" GridPane.rowIndex="2">
+                                            <Label text="%gameUploadFormDialog.file.target" styleClass="title" >
+                                                <graphic>
+                                                    <FontAwesomeIconView styleClass="information" />
+                                                </graphic>
+                                                <tooltip>
+                                                    <Tooltip text="%gameUploadFormDialog.file.target.tooltip" />
+                                                </tooltip>
+                                            </Label>
+                                            <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                                        </HBox>
+                                        <PathField fx:id="fileTargetPathField" GridPane.rowIndex="3" onAction="#selectFileTarget" />
+                                        <Label text="%gameUploadFormDialog.file.parameters" styleClass="title" GridPane.columnIndex="1" GridPane.rowIndex="2" >
+                                            <graphic>
+                                                <FontAwesomeIconView styleClass="information" />
+                                            </graphic>
+                                            <tooltip>
+                                                <Tooltip text="%gameUploadFormDialog.file.parameters.tooltip" />
+                                            </tooltip>
+                                        </Label>
+                                        <TextField fx:id="fileParametersTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    </children>
+                                </GridPane>
+                            </content>
+                        </TitledPane>
+                        <TitledPane collapsible="false" styleClass="type" text="%gameUploadFormDialog.type" GridPane.columnSpan="2147483647" GridPane.rowIndex="9">
+                            <content>
+                                <HBox spacing="10.0">
+                                    <children>
+                                        <CheckBox fx:id="demoCheckBox" mnemonicParsing="false" text="%gameUploadFormDialog.type.demo" styleClass="demo" />
+                                        <CheckBox fx:id="fangameCheckBox" mnemonicParsing="false" text="%gameUploadFormDialog.type.fangame" styleClass="fangame" />
+                                        <CheckBox fx:id="fantradCheckBox" mnemonicParsing="false" text="%gameUploadFormDialog.type.fantrad" styleClass="fantrad" />
+                                        <CheckBox fx:id="hackromCheckBox" mnemonicParsing="false" text="%gameUploadFormDialog.type.hackrom" styleClass="hackrom" />
+                                        <CheckBox fx:id="homebrewCheckBox" mnemonicParsing="false" text="%gameUploadFormDialog.type.homebrew" styleClass="homebrew" />
+                                    </children>
+                                </HBox>
+                            </content>
+                        </TitledPane>
+                        <TitledPane collapsible="false" styleClass="languages" GridPane.columnSpan="2147483647" GridPane.rowIndex="10">
+                            <graphic>
+                                <HBox styleClass="field-label-container">
+                                    <Label text="%gameUploadFormDialog.languages" styleClass="title" />
+                                    <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                                </HBox>
+                            </graphic>
+                            <content>
+                                <VBox>
+                                    <children>
+                                        <ToolBar>
+                                            <items>
+                                                <Button fx:id="addLanguageButton" mnemonicParsing="false" onAction="#addLanguage">
+                                                    <graphic>
+                                                        <FontAwesomeIconView />
+                                                    </graphic>
+                                                    <tooltip>
+                                                        <Tooltip text="%gameUploadFormDialog.languages.add" />
+                                                    </tooltip>
+                                                    <styleClass>
+                                                        <String fx:value="add" />
+                                                        <String fx:value="transparent" />
+                                                    </styleClass>
+                                                </Button>
+                                                <Button fx:id="removeLanguageButton" mnemonicParsing="false" onAction="#removeLanguage">
+                                                    <graphic>
+                                                        <FontAwesomeIconView />
+                                                    </graphic>
+                                                    <tooltip>
+                                                        <Tooltip text="%gameUploadFormDialog.languages.remove" />
+                                                    </tooltip>
+                                                    <styleClass>
+                                                        <String fx:value="delete" />
+                                                        <String fx:value="transparent" />
+                                                    </styleClass>
+                                                </Button>
+                                            </items>
+                                        </ToolBar>
+                                        <ListView fx:id="languagesListView" VBox.vgrow="ALWAYS" >
+                                            <cellFactory>
+                                                <LanguageListCell.Factory />
+                                            </cellFactory>
+                                        </ListView>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </TitledPane>
+                        <TitledPane collapsible="false" styleClass="genres" GridPane.columnSpan="2147483647" GridPane.rowIndex="11">
+                            <graphic>
+                                <HBox styleClass="field-label-container">
+                                    <Label text="%gameUploadFormDialog.genres" styleClass="title" />
+                                    <Label text="%gameUploadFormDialog.field.mandatory" styleClass="mandatory" />
+                                </HBox>
+                            </graphic>
+                            <content>
+                                <VBox>
+                                    <children>
+                                        <ToolBar>
+                                            <items>
+                                                <Button fx:id="addGenreButton" mnemonicParsing="false" onAction="#addGenre">
+                                                    <graphic>
+                                                        <FontAwesomeIconView />
+                                                    </graphic>
+                                                    <tooltip>
+                                                        <Tooltip text="%gameUploadFormDialog.genres.add" />
+                                                    </tooltip>
+                                                    <styleClass>
+                                                        <String fx:value="add" />
+                                                        <String fx:value="transparent" />
+                                                    </styleClass>
+                                                </Button>
+                                                <Button fx:id="removeGenreButton" mnemonicParsing="false" onAction="#removeGenre">
+                                                    <graphic>
+                                                        <FontAwesomeIconView />
+                                                    </graphic>
+                                                    <tooltip>
+                                                        <Tooltip text="%gameUploadFormDialog.genres.remove" />
+                                                    </tooltip>
+                                                    <styleClass>
+                                                        <String fx:value="delete" />
+                                                        <String fx:value="transparent" />
+                                                    </styleClass>
+                                                </Button>
+                                            </items>
+                                        </ToolBar>
+                                        <ListView fx:id="genresListView" VBox.vgrow="ALWAYS" >
+                                            <cellFactory>
+                                                <GenreListCell.Factory/>
+                                            </cellFactory>
+                                        </ListView>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </TitledPane>
+                        <TitledPane collapsible="false" styleClass="series" text="%gameUploadFormDialog.series" GridPane.columnSpan="2147483647" GridPane.rowIndex="12">
+                            <content>
+                                <VBox>
+                                    <children>
+                                        <ToolBar>
+                                            <items>
+                                                <MenuButton>
+                                                    <styleClass>
+                                                        <String fx:value="add"/>
+                                                        <String fx:value="transparent"/>
+                                                    </styleClass>
+                                                    <graphic>
+                                                        <FontAwesomeIconView/>
+                                                    </graphic>
+                                                    <tooltip>
+                                                        <Tooltip text="%gameUploadFormDialog.series.add" />
+                                                    </tooltip>
+                                                    <items>
+                                                        <MenuItem fx:id="createLocalSeriesMenuItem" text="%gameUploadFormDialog.series.add.new" onAction="#createLocalSeries"/>
+                                                        <MenuItem fx:id="addLocalSeriesMenuItem" text="%gameUploadFormDialog.series.add.local" onAction="#addLocalSeries"/>
+                                                        <MenuItem fx:id="addRemoteSeriesMenuItem" text="%gameUploadFormDialog.series.add.remote" onAction="#addRemoteSeries"/>
+                                                    </items>
+                                                </MenuButton>
+                                                <Button fx:id="removeSeriesButton" mnemonicParsing="false" onAction="#removeSeries">
+                                                    <graphic>
+                                                        <FontAwesomeIconView />
+                                                    </graphic>
+                                                    <tooltip>
+                                                        <Tooltip text="%gameUploadFormDialog.series.remove" />
+                                                    </tooltip>
+                                                    <styleClass>
+                                                        <String fx:value="delete" />
+                                                        <String fx:value="transparent" />
+                                                    </styleClass>
+                                                </Button>
+                                            </items>
+                                        </ToolBar>
+                                        <ListView fx:id="seriesListView" VBox.vgrow="ALWAYS" >
+                                            <cellFactory>
+                                                <SeriesListCell.Factory/>
+                                            </cellFactory>
+                                        </ListView>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </TitledPane>
+                    </children>
+                </GridPane>
+            </content>
+        </ScrollPane>
+    </content>
+    <buttonTypes>
+        <ButtonType fx:constant="CANCEL" />
+        <ButtonType fx:constant="OK" />
+    </buttonTypes>
+    <graphic>
+        <FontAwesomeIconView />
+    </graphic>
+</DialogPane>

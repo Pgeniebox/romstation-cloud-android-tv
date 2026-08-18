@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import java.lang.*?>
+<?import org.romstation.application.view.control.cell.TextTableCell.Factory?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.view.controller.MetasPaneController">
+    <styleClass>
+        <String fx:value="entity-pane"/>
+        <String fx:value="metas"/>
+    </styleClass>
+    <top>
+        <ToolBar>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#add">
+                <tooltip>
+                    <Tooltip text="%metasPane.add"/>
+                </tooltip>
+                <graphic>
+                    <FontAwesomeIconView/>
+                </graphic>
+                <styleClass>
+                    <String fx:value="add"/>
+                    <String fx:value="transparent"/>
+                </styleClass>
+            </Button>
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#edit">
+                <tooltip>
+                    <Tooltip text="%metasPane.edit"/>
+                </tooltip>
+                <graphic>
+                    <FontAwesomeIconView/>
+                </graphic>
+                <styleClass>
+                    <String fx:value="edit"/>
+                    <String fx:value="transparent"/>
+                </styleClass>
+            </Button>
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#delete">
+                <tooltip>
+                    <Tooltip text="%metasPane.delete"/>
+                </tooltip>
+                <graphic>
+                    <FontAwesomeIconView/>
+                </graphic>
+                <styleClass>
+                    <String fx:value="delete"/>
+                    <String fx:value="transparent"/>
+                </styleClass>
+            </Button>
+        </ToolBar>
+    </top>
+    <center>
+        <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="keyTableColumn" prefWidth="75.0" text="%metasPane.tableView.column.key"/>
+                <TableColumn fx:id="valueTableColumn" text="%metasPane.tableView.column.value">
+                    <cellFactory>
+                        <TextTableCell.Factory/>
+                    </cellFactory>
+                </TableColumn>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </center>
+</BorderPane>

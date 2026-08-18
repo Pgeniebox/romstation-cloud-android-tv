@@ -1,0 +1,553 @@
+{
+  "name": "Nintendo 64",
+  "image": "file:controllers\\17\\controller.png",
+  "template": {
+    "name": "Default",
+    "device": null,
+    "inputs": [
+      {
+        "id": 1,
+        "name": "Pad Up",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 2,
+        "name": "Pad Down",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 3,
+        "name": "Pad Left",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 4,
+        "name": "Pad Right",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 12,
+        "name": "Start",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 5,
+        "name": "A",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 8,
+        "name": "B",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 23,
+        "name": "C Up",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 24,
+        "name": "C Down",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 21,
+        "name": "C Left",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 22,
+        "name": "C Right",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 9,
+        "name": "L",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 10,
+        "name": "R",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 25,
+        "name": "Z",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 18,
+        "name": "Stick Up",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 19,
+        "name": "Stick Down",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 16,
+        "name": "Stick Left",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 17,
+        "name": "Stick Right",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "name": "Keyboard",
+      "device": {
+        "type": 1
+      },
+      "inputs": [
+        {
+          "id": 1,
+          "name": "Pad Up",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.UP"
+        },
+        {
+          "id": 2,
+          "name": "Pad Down",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.DOWN"
+        },
+        {
+          "id": 3,
+          "name": "Pad Left",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.LEFT"
+        },
+        {
+          "id": 4,
+          "name": "Pad Right",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.RIGHT"
+        },
+        {
+          "id": 12,
+          "name": "Start",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.ENTER"
+        },
+        {
+          "id": 5,
+          "name": "A",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.W"
+        },
+        {
+          "id": 8,
+          "name": "B",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.X"
+        },
+        {
+          "id": 23,
+          "name": "C Up",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": null
+        },
+        {
+          "id": 24,
+          "name": "C Down",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": null
+        },
+        {
+          "id": 21,
+          "name": "C Left",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": null
+        },
+        {
+          "id": 22,
+          "name": "C Right",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": null
+        },
+        {
+          "id": 9,
+          "name": "L",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.A"
+        },
+        {
+          "id": 10,
+          "name": "R",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.E"
+        },
+        {
+          "id": 25,
+          "name": "Z",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.Z"
+        },
+        {
+          "id": 18,
+          "name": "Stick Up",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "KEY.I"
+        },
+        {
+          "id": 19,
+          "name": "Stick Down",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "KEY.K"
+        },
+        {
+          "id": 16,
+          "name": "Stick Left",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "KEY.J"
+        },
+        {
+          "id": 17,
+          "name": "Stick Right",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "KEY.L"
+        }
+      ]
+    },
+    {
+      "name": "Xbox Controller",
+      "device": null,
+      "inputs": [
+        {
+          "id": 1,
+          "name": "Pad Up",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.UP"
+        },
+        {
+          "id": 2,
+          "name": "Pad Down",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.DOWN"
+        },
+        {
+          "id": 3,
+          "name": "Pad Left",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.LEFT"
+        },
+        {
+          "id": 4,
+          "name": "Pad Right",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.RIGHT"
+        },
+        {
+          "id": 12,
+          "name": "Start",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.7"
+        },
+        {
+          "id": 5,
+          "name": "A",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.0"
+        },
+        {
+          "id": 8,
+          "name": "B",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.2"
+        },
+        {
+          "id": 23,
+          "name": "C Up",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "AXIS.RY-"
+        },
+        {
+          "id": 24,
+          "name": "C Down",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "AXIS.RY+"
+        },
+        {
+          "id": 21,
+          "name": "C Left",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "AXIS.RX-"
+        },
+        {
+          "id": 22,
+          "name": "C Right",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "AXIS.RX+"
+        },
+        {
+          "id": 9,
+          "name": "L",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.4"
+        },
+        {
+          "id": 10,
+          "name": "R",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.5"
+        },
+        {
+          "id": 25,
+          "name": "Z",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "AXIS.Z-"
+        },
+        {
+          "id": 18,
+          "name": "Stick Up",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.Y-"
+        },
+        {
+          "id": 19,
+          "name": "Stick Down",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.Y+"
+        },
+        {
+          "id": 16,
+          "name": "Stick Left",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.X-"
+        },
+        {
+          "id": 17,
+          "name": "Stick Right",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.X+"
+        }
+      ]
+    },
+    {
+      "name": "Playstation Controller",
+      "device": null,
+      "inputs": [
+        {
+          "id": 1,
+          "name": "Pad Up",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.UP"
+        },
+        {
+          "id": 2,
+          "name": "Pad Down",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.DOWN"
+        },
+        {
+          "id": 3,
+          "name": "Pad Left",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.LEFT"
+        },
+        {
+          "id": 4,
+          "name": "Pad Right",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.RIGHT"
+        },
+        {
+          "id": 12,
+          "name": "Start",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.9"
+        },
+        {
+          "id": 5,
+          "name": "A",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.1"
+        },
+        {
+          "id": 8,
+          "name": "B",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.0"
+        },
+        {
+          "id": 23,
+          "name": "C Up",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "AXIS.RZ-"
+        },
+        {
+          "id": 24,
+          "name": "C Down",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "AXIS.RZ+"
+        },
+        {
+          "id": 21,
+          "name": "C Left",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "AXIS.Z-"
+        },
+        {
+          "id": 22,
+          "name": "C Right",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "AXIS.Z+"
+        },
+        {
+          "id": 9,
+          "name": "L",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.4"
+        },
+        {
+          "id": 10,
+          "name": "R",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.5"
+        },
+        {
+          "id": 25,
+          "name": "Z",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "AXIS.RY"
+        },
+        {
+          "id": 18,
+          "name": "Stick Up",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.Y-"
+        },
+        {
+          "id": 19,
+          "name": "Stick Down",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.Y+"
+        },
+        {
+          "id": 16,
+          "name": "Stick Left",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.X-"
+        },
+        {
+          "id": 17,
+          "name": "Stick Right",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.X+"
+        }
+      ]
+    }
+  ],
+  "current_profile": 0
+}

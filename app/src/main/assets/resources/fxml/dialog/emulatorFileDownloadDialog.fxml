@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<DialogPane fx:id="dialogPane" headerText="%emulatorFileDownloadDialog.header" id="emulator-file-download-dialog" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.an">
+    <graphic>
+        <FontAwesomeIconView />
+    </graphic>
+    <buttonTypes>
+      <ButtonType fx:constant="CANCEL" />
+    </buttonTypes>
+   <content>
+      <GridPane>
+        <columnConstraints>
+            <ColumnConstraints />
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+          <ColumnConstraints halignment="RIGHT" minWidth="-Infinity" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" />
+            <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="ALWAYS" />
+          <RowConstraints minHeight="10.0" />
+          <RowConstraints minHeight="10.0" />
+          <RowConstraints minHeight="10.0" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="imageView" fitWidth="120.0" fitHeight="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowSpan="2147483647" GridPane.valignment="CENTER" />
+            <Label fx:id="nameLabel" styleClass="name" GridPane.columnIndex="1" />
+            <Label fx:id="messageLabel" styleClass="message" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="percentageLabel" styleClass="percentage" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+            <Label fx:id="progressLabel" styleClass="progress" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="4" />
+            <Label fx:id="speedLabel" styleClass="speed" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+   </content>
+</DialogPane>

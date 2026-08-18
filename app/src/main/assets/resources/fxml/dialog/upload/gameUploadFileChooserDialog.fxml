@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import org.romstation.application.view.control.PathField?>
+<DialogPane fx:id="root" headerText="%gameUploadFileChooserDialog.header" id="game-upload-file-chooser-dialog" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.bP">
+   <buttonTypes>
+      <ButtonType fx:constant="CANCEL" />
+      <ButtonType fx:constant="OK" />
+   </buttonTypes>
+   <content>
+      <VBox>
+         <children>
+            <Label styleClass="message" text="%gameUploadFileChooserDialog.message" VBox.vgrow="ALWAYS" />
+            <PathField fx:id="pathField" onAction="#selectPath" />
+         </children>
+      </VBox>
+   </content>
+   <graphic>
+      <FontAwesomeIconView />
+   </graphic>
+</DialogPane>

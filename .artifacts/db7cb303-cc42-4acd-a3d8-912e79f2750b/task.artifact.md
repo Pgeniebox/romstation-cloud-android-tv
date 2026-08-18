@@ -1,0 +1,3 @@
+- [x] Enable key event logging in MainActivity
+- [ ] Receive log data from user
+- [ ] Implement Nexus button mapping based on logs

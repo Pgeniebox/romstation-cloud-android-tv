@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import org.romstation.application.view.control.cell.*?>
+<?import javafx.scene.layout.VBox?>
+
+<DialogPane fx:id="dialogPane" headerText="%legacyGameImporterDialog.header" id="legacy-game-importer-dialog" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.bd">
+   <buttonTypes>
+      <ButtonType fx:constant="CANCEL" />
+      <ButtonType fx:constant="OK" />
+   </buttonTypes>
+    <graphic>
+        <FontAwesomeIconView />
+    </graphic>
+   <content>
+      <VBox>
+         <children>
+            <TableView fx:id="tableView" editable="true" VBox.vgrow="ALWAYS">
+              <columns>
+                  <TableColumn fx:id="checkBoxTableColumn" prefWidth="75.0">
+                     <graphic>
+                        <CheckBox fx:id="checkBox" mnemonicParsing="false" />
+                     </graphic>
+                  </TableColumn>
+                  <TableColumn fx:id="idTableColumn" prefWidth="75.0" text="%legacyGameImporterDialog.games.tableView.column.id">
+                      <cellFactory>
+                          <NumericTableCell.Factory />
+                      </cellFactory>
+                      <cellValueFactory>
+                          <PropertyValueFactory property="id" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="titleTableColumn" prefWidth="300.0" text="%legacyGameImporterDialog.games.tableView.column.title">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="title" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="systemTableColumn" prefWidth="150.0" text="%legacyGameImporterDialog.games.tableView.column.system">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="console" />
+                      </cellValueFactory>
+                  </TableColumn>
+              </columns>
+            </TableView>
+             <Label fx:id="alertLabel" maxWidth="Infinity" styleClass="alert" text="%legacyGameImporterDialog.alert" wrapText="true">
+                 <graphic>
+                     <FontAwesomeIconView />
+                 </graphic>
+             </Label>
+         </children>
+      </VBox>
+   </content>
+</DialogPane>

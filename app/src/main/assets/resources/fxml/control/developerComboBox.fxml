@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import org.romstation.application.view.control.cell.entity.DeveloperListCell?>
+<?import org.romstation.application.view.control.cell.entity.DeveloperListCell.Factory?>
+<fx:root type="HBox" styleClass="developer-combo-box" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <ComboBox fx:id="comboBox" prefWidth="150" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+        <cellFactory>
+            <DeveloperListCell.Factory />
+        </cellFactory>
+        <buttonCell>
+            <DeveloperListCell />
+        </buttonCell>
+    </ComboBox>
+    <MenuButton fx:id="menuButton">
+        <tooltip>
+            <Tooltip text="%developerComboBox.options" />
+        </tooltip>
+        <graphic>
+            <FontAwesomeIconView />
+        </graphic>
+        <items>
+            <MenuItem text="%developerComboBox.create" onAction="#create" />
+            <MenuItem fx:id="editMenuItem" text="%developerComboBox.edit" onAction="#edit" />
+            <SeparatorMenuItem />
+            <MenuItem fx:id="clearMenuItem" text="%developerComboBox.clear" onAction="#clear" />
+        </items>
+    </MenuButton>
+</fx:root>

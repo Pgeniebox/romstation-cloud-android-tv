@@ -1,0 +1,3 @@
+- `[x]` Update `WebRtcReceiver.java`: Strictly prioritize H.264 in `setVideoCodecPreferences`
+- `[x]` Update `WebRtcReceiver.java`: Add logging to `onTrack` for better debugging
+- `[x]` Verify build

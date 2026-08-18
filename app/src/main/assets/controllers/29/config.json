@@ -1,0 +1,745 @@
+{
+  "name": "Xbox Controller",
+  "image": "file:controllers\\29\\controller.png",
+  "template": {
+    "name": "Default",
+    "device": null,
+    "inputs": [
+      {
+        "id": 1,
+        "name": "Pad Up",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 2,
+        "name": "Pad Down",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 3,
+        "name": "Pad Left",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 4,
+        "name": "Pad Right",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 11,
+        "name": "Back",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 12,
+        "name": "Start",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 5,
+        "name": "A",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 6,
+        "name": "B",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 7,
+        "name": "Y",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 8,
+        "name": "X",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 9,
+        "name": "White",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 10,
+        "name": "Black",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 14,
+        "name": "Left Stick Button",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 15,
+        "name": "Right Stick Button",
+        "type": 1,
+        "threshold": 0.5,
+        "binding": null
+      },
+      {
+        "id": 18,
+        "name": "Left Stick Up",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 19,
+        "name": "Left Stick Down",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 16,
+        "name": "Left Stick Left",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 17,
+        "name": "Left Stick Right",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 23,
+        "name": "Right Stick Up",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 24,
+        "name": "Right Stick Down",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 21,
+        "name": "Right Stick Left",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 22,
+        "name": "Right Stick Right",
+        "type": 2,
+        "sensitivity": 1.33,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 20,
+        "name": "L Trigger",
+        "type": 2,
+        "sensitivity": 1.0,
+        "deadZone": 0.05,
+        "binding": null
+      },
+      {
+        "id": 25,
+        "name": "R Trigger",
+        "type": 2,
+        "sensitivity": 1.0,
+        "deadZone": 0.05,
+        "binding": null
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "name": "Keyboard",
+      "device": {
+        "type": 1
+      },
+      "inputs": [
+        {
+          "id": 1,
+          "name": "Pad Up",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.UP"
+        },
+        {
+          "id": 2,
+          "name": "Pad Down",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.DOWN"
+        },
+        {
+          "id": 3,
+          "name": "Pad Left",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.LEFT"
+        },
+        {
+          "id": 4,
+          "name": "Pad Right",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.RIGHT"
+        },
+        {
+          "id": 11,
+          "name": "Back",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.SPACE"
+        },
+        {
+          "id": 12,
+          "name": "Start",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.ENTER"
+        },
+        {
+          "id": 5,
+          "name": "A",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.W"
+        },
+        {
+          "id": 6,
+          "name": "B",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.X"
+        },
+        {
+          "id": 7,
+          "name": "Y",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.C"
+        },
+        {
+          "id": 8,
+          "name": "X",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.V"
+        },
+        {
+          "id": 9,
+          "name": "White",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.Q"
+        },
+        {
+          "id": 10,
+          "name": "Black",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "KEY.D"
+        },
+        {
+          "id": 14,
+          "name": "Left Stick Button",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": null
+        },
+        {
+          "id": 15,
+          "name": "Right Stick Button",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": null
+        },
+        {
+          "id": 18,
+          "name": "Left Stick Up",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "KEY.I"
+        },
+        {
+          "id": 19,
+          "name": "Left Stick Down",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "KEY.K"
+        },
+        {
+          "id": 16,
+          "name": "Left Stick Left",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "KEY.J"
+        },
+        {
+          "id": 17,
+          "name": "Left Stick Right",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "KEY.L"
+        },
+        {
+          "id": 23,
+          "name": "Right Stick Up",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": null
+        },
+        {
+          "id": 24,
+          "name": "Right Stick Down",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": null
+        },
+        {
+          "id": 21,
+          "name": "Right Stick Left",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": null
+        },
+        {
+          "id": 22,
+          "name": "Right Stick Right",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": null
+        },
+        {
+          "id": 20,
+          "name": "L Trigger",
+          "type": 2,
+          "sensitivity": 1.0,
+          "deadZone": 0.05,
+          "binding": "KEY.A"
+        },
+        {
+          "id": 25,
+          "name": "R Trigger",
+          "type": 2,
+          "sensitivity": 1.0,
+          "deadZone": 0.05,
+          "binding": "KEY.E"
+        }
+      ]
+    },
+    {
+      "name": "Xbox Controller",
+      "device": null,
+      "inputs": [
+        {
+          "id": 1,
+          "name": "Pad Up",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.UP"
+        },
+        {
+          "id": 2,
+          "name": "Pad Down",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.DOWN"
+        },
+        {
+          "id": 3,
+          "name": "Pad Left",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.LEFT"
+        },
+        {
+          "id": 4,
+          "name": "Pad Right",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.RIGHT"
+        },
+        {
+          "id": 11,
+          "name": "Back",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.6"
+        },
+        {
+          "id": 12,
+          "name": "Start",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.7"
+        },
+        {
+          "id": 5,
+          "name": "A",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.0"
+        },
+        {
+          "id": 6,
+          "name": "B",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.1"
+        },
+        {
+          "id": 7,
+          "name": "Y",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.3"
+        },
+        {
+          "id": 8,
+          "name": "X",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.2"
+        },
+        {
+          "id": 9,
+          "name": "White",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.4"
+        },
+        {
+          "id": 10,
+          "name": "Black",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.5"
+        },
+        {
+          "id": 14,
+          "name": "Left Stick Button",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.8"
+        },
+        {
+          "id": 15,
+          "name": "Right Stick Button",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.9"
+        },
+        {
+          "id": 18,
+          "name": "Left Stick Up",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.Y-"
+        },
+        {
+          "id": 19,
+          "name": "Left Stick Down",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.Y+"
+        },
+        {
+          "id": 16,
+          "name": "Left Stick Left",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.X-"
+        },
+        {
+          "id": 17,
+          "name": "Left Stick Right",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.X+"
+        },
+        {
+          "id": 23,
+          "name": "Right Stick Up",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.RY-"
+        },
+        {
+          "id": 24,
+          "name": "Right Stick Down",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.RY+"
+        },
+        {
+          "id": 21,
+          "name": "Right Stick Left",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.RX-"
+        },
+        {
+          "id": 22,
+          "name": "Right Stick Right",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.RX+"
+        },
+        {
+          "id": 20,
+          "name": "L Trigger",
+          "type": 2,
+          "sensitivity": 1.0,
+          "deadZone": 0.05,
+          "binding": "AXIS.Z+"
+        },
+        {
+          "id": 25,
+          "name": "R Trigger",
+          "type": 2,
+          "sensitivity": 1.0,
+          "deadZone": 0.05,
+          "binding": "AXIS.Z-"
+        }
+      ]
+    },
+    {
+      "name": "Playstation Controller",
+      "device": null,
+      "inputs": [
+        {
+          "id": 1,
+          "name": "Pad Up",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.UP"
+        },
+        {
+          "id": 2,
+          "name": "Pad Down",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.DOWN"
+        },
+        {
+          "id": 3,
+          "name": "Pad Left",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.LEFT"
+        },
+        {
+          "id": 4,
+          "name": "Pad Right",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "POV.RIGHT"
+        },
+        {
+          "id": 11,
+          "name": "Back",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.8"
+        },
+        {
+          "id": 12,
+          "name": "Start",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.9"
+        },
+        {
+          "id": 5,
+          "name": "A",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.1"
+        },
+        {
+          "id": 6,
+          "name": "B",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.2"
+        },
+        {
+          "id": 7,
+          "name": "Y",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.3"
+        },
+        {
+          "id": 8,
+          "name": "X",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.0"
+        },
+        {
+          "id": 9,
+          "name": "White",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.4"
+        },
+        {
+          "id": 10,
+          "name": "Black",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.5"
+        },
+        {
+          "id": 14,
+          "name": "Left Stick Button",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.10"
+        },
+        {
+          "id": 15,
+          "name": "Right Stick Button",
+          "type": 1,
+          "threshold": 0.5,
+          "binding": "BUTTON.11"
+        },
+        {
+          "id": 18,
+          "name": "Left Stick Up",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.Y-"
+        },
+        {
+          "id": 19,
+          "name": "Left Stick Down",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.Y+"
+        },
+        {
+          "id": 16,
+          "name": "Left Stick Left",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.X-"
+        },
+        {
+          "id": 17,
+          "name": "Left Stick Right",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.X+"
+        },
+        {
+          "id": 23,
+          "name": "Right Stick Up",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.RZ-"
+        },
+        {
+          "id": 24,
+          "name": "Right Stick Down",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.RZ+"
+        },
+        {
+          "id": 21,
+          "name": "Right Stick Left",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.Z-"
+        },
+        {
+          "id": 22,
+          "name": "Right Stick Right",
+          "type": 2,
+          "sensitivity": 1.33,
+          "deadZone": 0.05,
+          "binding": "AXIS.Z+"
+        },
+        {
+          "id": 20,
+          "name": "L Trigger",
+          "type": 2,
+          "sensitivity": 1.0,
+          "deadZone": 0.05,
+          "binding": "AXIS.RX"
+        },
+        {
+          "id": 25,
+          "name": "R Trigger",
+          "type": 2,
+          "sensitivity": 1.0,
+          "deadZone": 0.05,
+          "binding": "AXIS.RY"
+        }
+      ]
+    }
+  ],
+  "current_profile": 0
+}

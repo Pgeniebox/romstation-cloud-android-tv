@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import java.lang.String?>
+<?import javafx.scene.layout.BorderPane?>
+<DialogPane fx:id="root" headerText="%gameProfileChoiceDialog.header" id="game-profile-choice-dialog" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.aB">
+    <buttonTypes>
+        <ButtonType fx:constant="CANCEL" />
+        <ButtonType fx:constant="OK" />
+    </buttonTypes>
+    <content>
+        <BorderPane>
+            <center>
+                <TreeView fx:id="treeView" showRoot="false" VBox.vgrow="ALWAYS" onKeyPressed="#onKeyPressed" onMouseClicked="#onMouseClicked"/>
+            </center>
+            <bottom>
+                <ToolBar styleClass="bottom">
+                    <Button onAction="#expand">
+                        <tooltip>
+                            <Tooltip text="%gameProfileChoiceDialog.expand"/>
+                        </tooltip>
+                        <graphic>
+                            <FontAwesomeIconView/>
+                        </graphic>
+                        <styleClass>
+                            <String fx:value="expand"/>
+                            <String fx:value="transparent"/>
+                        </styleClass>
+                    </Button>
+                    <Button styleClass="collapse" onAction="#collapse">
+                        <tooltip>
+                            <Tooltip text="%gameProfileChoiceDialog.collapse"/>
+                        </tooltip>
+                        <graphic>
+                            <FontAwesomeIconView/>
+                        </graphic>
+                        <styleClass>
+                            <String fx:value="collapse"/>
+                            <String fx:value="transparent"/>
+                        </styleClass>
+                    </Button>
+                </ToolBar>
+            </bottom>
+        </BorderPane>
+    </content>
+    <graphic>
+        <FontAwesomeIconView />
+    </graphic>
+</DialogPane>

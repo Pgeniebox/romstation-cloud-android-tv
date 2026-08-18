@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import org.romstation.application.view.control.cell.entity.LocaleListCell?>
+<?import org.romstation.application.view.control.cell.entity.LocaleListCell.Factory?>
+<?import org.romstation.application.view.control.cell.ApplicationViewListCell?>
+<?import org.romstation.application.view.control.cell.ApplicationViewListCell.Factory?>
+
+<?import javafx.scene.control.Separator?>
+<GridPane styleClass="application" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.bI">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES"/>
+      <ColumnConstraints hgrow="SOMETIMES" halignment="RIGHT"/>
+  </columnConstraints>
+   <children>
+       <Label text="%settings.dialog.application.locale"/>
+       <ComboBox fx:id="localeComboBox" prefWidth="200.0" GridPane.columnIndex="1">
+           <buttonCell>
+               <LocaleListCell/>
+           </buttonCell>
+           <cellFactory>
+               <LocaleListCell.Factory/>
+           </cellFactory>
+       </ComboBox>
+       <Separator GridPane.columnSpan="2147483647" GridPane.rowIndex="1"/>
+       <Label text="%settings.dialog.application.theme" GridPane.rowIndex="2"/>
+       <ComboBox fx:id="themeComboBox" prefWidth="200.0" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+       <Separator GridPane.columnSpan="2147483647" GridPane.rowIndex="3"/>
+       <Label text="%settings.dialog.application.startScreen" GridPane.rowIndex="4"/>
+       <ComboBox fx:id="startScreenComboBox" prefWidth="200.0" GridPane.rowIndex="4" GridPane.columnIndex="1">
+           <buttonCell>
+               <ApplicationViewListCell/>
+           </buttonCell>
+           <cellFactory>
+               <ApplicationViewListCell.Factory/>
+           </cellFactory>
+       </ComboBox>
+       <Separator GridPane.columnSpan="2147483647" GridPane.rowIndex="5"/>
+       <Label text="%settings.dialog.application.cache" GridPane.rowIndex="6"/>
+       <Button mnemonicParsing="false" onAction="#clearApplicationCache" text="%settings.dialog.application.cache.clear" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+       <Separator GridPane.columnSpan="2147483647" GridPane.rowIndex="7"/>
+       <CheckBox fx:id="confirmExitCheckBox" mnemonicParsing="false" text="%settings.dialog.application.confirmExit" GridPane.rowIndex="8"/>
+   </children>
+</GridPane>

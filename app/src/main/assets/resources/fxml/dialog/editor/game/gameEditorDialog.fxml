@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import org.romstation.application.view.control.SystemComboBox?>
+<?import org.romstation.application.view.control.DeveloperComboBox?>
+<?import org.romstation.application.view.control.PublisherComboBox?>
+<?import org.romstation.application.view.control.PathField?>
+<DialogPane id="game-editor-dialog" headerText="%gameEditorDialog.header" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.aZ" >
+    <graphic>
+        <FontAwesomeIconView />
+    </graphic>
+    <content>
+        <ScrollPane fx:id="scrollPane">
+            <GridPane>
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES"/>
+                    <ColumnConstraints hgrow="SOMETIMES"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                    <RowConstraints vgrow="ALWAYS"/>
+                </rowConstraints>
+                <children>
+                    <VBox styleClass="named-field">
+                        <Label text="%gameEditorDialog.title"/>
+                        <TextField fx:id="titleTextField"/>
+                    </VBox>
+                    <VBox styleClass="named-field" GridPane.rowIndex="1">
+                        <Label text="%gameEditorDialog.system" />
+                        <SystemComboBox fx:id="systemComboBox"/>
+                    </VBox>
+                    <VBox styleClass="named-field" GridPane.rowIndex="2">
+                        <Label text="%gameEditorDialog.players"/>
+                        <TextField fx:id="playersTextField"/>
+                    </VBox>
+                    <VBox styleClass="named-field" GridPane.rowIndex="3">
+                        <Label text="%gameEditorDialog.year"/>
+                        <TextField fx:id="yearTextField"/>
+                    </VBox>
+                    <VBox styleClass="named-field" GridPane.columnIndex="1">
+                        <Label text="%gameEditorDialog.developer"/>
+                        <DeveloperComboBox fx:id="developerComboBox"/>
+                    </VBox>
+                    <VBox styleClass="named-field" GridPane.rowIndex="1" GridPane.columnIndex="1">
+                        <Label text="%gameEditorDialog.publisher"/>
+                        <PublisherComboBox fx:id="publisherComboBox"/>
+                    </VBox>
+                    <VBox styleClass="named-field" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                        <Label text="%gameEditorDialog.image"/>
+                        <PathField fx:id="graphicPathField" onAction="#selectGraphicPath"/>
+                    </VBox>
+                    <VBox styleClass="named-field" GridPane.rowIndex="3" GridPane.columnIndex="1">
+                        <Label text="%gameEditorDialog.directory"/>
+                        <PathField fx:id="gameDirectoryPathField" onAction="#selectGameDirectory"/>
+                    </VBox>
+                    <Separator GridPane.rowIndex="4" GridPane.columnSpan="2"/>
+                    <TabPane styleClass="floating" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="5" GridPane.columnSpan="2">
+                        <tabs>
+                            <Tab text="%gameEditorDialog.tab.files">
+                                <fx:include fx:id="gameFiles" source="/fxml/gameFilesPane.fxml"/>
+                            </Tab>
+                            <Tab text="%gameEditorDialog.tab.description">
+                                <fx:include fx:id="description" source="/fxml/translationsPane.fxml"/>
+                            </Tab>
+                            <Tab text="%gameEditorDialog.tab.languages">
+                                <fx:include fx:id="languages" source="/fxml/languagesPane.fxml"/>
+                            </Tab>
+                            <Tab text="%gameEditorDialog.tab.genres">
+                                <fx:include fx:id="genres" source="/fxml/genresPane.fxml"/>
+                            </Tab>
+                            <Tab text="%gameEditorDialog.tab.series">
+                                <fx:include fx:id="series" source="/fxml/seriesPane.fxml"/>
+                            </Tab>
+                            <Tab text="%gameEditorDialog.tab.tags">
+                                <fx:include fx:id="tags" source="/fxml/tagsPane.fxml"/>
+                            </Tab>
+                            <Tab text="%gameEditorDialog.tab.links">
+                                <fx:include fx:id="links" source="/fxml/linksPane.fxml"/>
+                            </Tab>
+                            <!--
+                            <Tab text="%gameEditorDialog.tab.scripts">
+                                <fx:include source="gameScriptsEditorPane.fxml"/>
+                            </Tab>
+                            -->
+                            <Tab text="%gameEditorDialog.tab.metas">
+                                <fx:include fx:id="metas" source="/fxml/metasPane.fxml"/>
+                            </Tab>
+                        </tabs>
+                    </TabPane>
+                </children>
+            </GridPane>
+        </ScrollPane>
+    </content>
+    <buttonTypes>
+        <ButtonType fx:constant="CANCEL" />
+        <ButtonType fx:constant="OK" />
+    </buttonTypes>
+</DialogPane>

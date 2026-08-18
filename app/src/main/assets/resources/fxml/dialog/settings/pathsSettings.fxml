@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import org.romstation.application.view.control.PathField?>
+<?import javafx.scene.control.Separator?>
+<GridPane fx:id="root" styleClass="paths" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.bK">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES"/>
+    <ColumnConstraints hgrow="SOMETIMES" halignment="RIGHT"/>
+  </columnConstraints>
+   <children>
+       <Label text="%settings.dialog.paths.games"/>
+       <PathField fx:id="gamesPathField" GridPane.columnIndex="1" onAction="#selectGamesPath"/>
+       <Separator GridPane.columnSpan="2147483647" GridPane.rowIndex="1"/>
+       <Label text="%settings.dialog.paths.emulators" GridPane.rowIndex="2"/>
+       <PathField fx:id="emulatorsPathField" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#selectEmulatorsPath"/>
+       <Separator GridPane.columnSpan="2147483647" GridPane.rowIndex="3"/>
+       <Label text="%settings.dialog.paths.screenshots" GridPane.rowIndex="4"/>
+       <PathField fx:id="screenshotsPathField" GridPane.rowIndex="4" GridPane.columnIndex="1" onAction="#selectScreenshotsPath"/>
+   </children>
+</GridPane>

@@ -1,0 +1,7 @@
+- [ ] Update imports in `AndroidGamepadListener.java`
+- [ ] Replace `volatile GamepadFrame currentFrame` with `AtomicReference<GamepadFrame>`
+- [ ] Update constructor to initialize `AtomicReference`
+- [ ] Refactor `onKeyDown` to use `updateAndGet()`
+- [ ] Refactor `onKeyUp` to use `updateAndGet()`
+- [ ] Refactor `onGenericMotion` to use `updateAndGet()`
+- [ ] Verify build and correctness

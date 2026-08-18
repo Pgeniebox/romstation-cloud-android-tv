@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.romstation.application.view.control.PathField?>
+<DialogPane fx:id="root" headerText="%gameFileImportDialog.header" id="game-file-import-dialog" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.as">
+   <buttonTypes>
+      <ButtonType fx:constant="CANCEL" />
+      <ButtonType fx:constant="OK" />
+   </buttonTypes>
+   <content>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+            <ColumnConstraints minWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="30.0" />
+          <RowConstraints />
+          <RowConstraints minHeight="10.0" />
+            <RowConstraints minHeight="30.0" />
+            <RowConstraints />
+        </rowConstraints>
+         <children>
+            <Label text="%gameFileImportDialog.name" />
+            <TextField fx:id="nameTextField" GridPane.rowIndex="1" />
+             <Label text="%gameFileImportDialog.path" GridPane.rowIndex="3" />
+             <PathField fx:id="pathField" GridPane.rowIndex="4" onAction="#selectPath" />
+         </children>
+      </GridPane>
+   </content>
+   <graphic>
+      <FontAwesomeIconView />
+   </graphic>
+</DialogPane>

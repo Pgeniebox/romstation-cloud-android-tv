@@ -1,0 +1,4 @@
+- `[x]` Configure Git to ignore sensitive files
+- `[x]` Create `keystore.properties.example` template
+- `[x]` Update `app/build.gradle.kts` with signing logic
+- `[/]` Help user generate the key (Manual/Terminal)

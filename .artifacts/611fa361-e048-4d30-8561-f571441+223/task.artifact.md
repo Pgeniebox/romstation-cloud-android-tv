@@ -1,0 +1,9 @@
+- [x] Create `dialog_streaming_menu.xml` layout
+- [x] Create `dialog_settings.xml` layout
+- [x] Update `WebRtcReceiver.java` with getters and `triggerNexusButton`
+- [x] Update `AndroidGamepadListener.java` with `pressNexusOnce`
+- [x] Update `MainActivity.java` with dialog logic and back button intercept
+- [x] Verify build and functionality
+- [x] Fix crash on session restart
+    - [x] Update `MainActivity.java` to use `closeSession()` instead of `release()`
+    - [x] Update `WebRtcReceiver.java` to properly shutdown `inputChannel`

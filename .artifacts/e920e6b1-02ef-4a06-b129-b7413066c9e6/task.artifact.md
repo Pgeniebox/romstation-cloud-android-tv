@@ -1,0 +1,6 @@
+- [ ] Remove Polling Patch Definitions from `script.js`
+- [ ] Remove polling-related functions from `PATCHES` object
+- [ ] Update `PATCH_ORDERS` and `STREAM_PAGE_PATCH_ORDERS` to exclude polling patches
+- [ ] Remove `controller.pollingRate` preference
+- [ ] Verify build
+- [ ] Create walkthrough

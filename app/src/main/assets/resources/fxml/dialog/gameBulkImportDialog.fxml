@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.romstation.application.view.control.SystemComboBox?>
+<?import java.lang.String?>
+<DialogPane fx:id="dialogPane" headerText="%gameBulkImportDialog.header" id="game-bulk-import-dialog" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.aq">
+   <buttonTypes>
+      <ButtonType fx:constant="CANCEL" />
+      <ButtonType fx:constant="OK" />
+   </buttonTypes>
+   <content>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES"/>
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints/>
+          <RowConstraints vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+             <VBox styleClass="named-field">
+                 <Label text="%gameBulkImportDialog.system" />
+                 <SystemComboBox fx:id="systemComboBox"/>
+             </VBox>
+             <TitledPane text="%gameBulkImportDialog.files" collapsible="false" styleClass="files" maxHeight="1.7976931348623157E308" GridPane.rowIndex="1">
+                 <VBox>
+                     <ToolBar>
+                         <Button fx:id="addFileButton" mnemonicParsing="false" onAction="#addFile">
+                             <graphic>
+                                 <FontAwesomeIconView/>
+                             </graphic>
+                             <tooltip>
+                                 <Tooltip text="%gameBulkImportDialog.files.add"/>
+                             </tooltip>
+                             <styleClass>
+                                 <String fx:value="add"/>
+                                 <String fx:value="transparent"/>
+                             </styleClass>
+                         </Button>
+                         <Button fx:id="removeFileButton" mnemonicParsing="false" onAction="#removeFile">
+                             <graphic>
+                                 <FontAwesomeIconView/>
+                             </graphic>
+                             <tooltip>
+                                 <Tooltip text="%gameBulkImportDialog.files.remove"/>
+                             </tooltip>
+                             <styleClass>
+                                 <String fx:value="remove"/>
+                                 <String fx:value="transparent"/>
+                             </styleClass>
+                         </Button>
+                     </ToolBar>
+                     <ListView fx:id="filesListView" VBox.vgrow="ALWAYS"/>
+                 </VBox>
+             </TitledPane>
+         </children>
+      </GridPane>
+   </content>
+   <graphic>
+      <FontAwesomeIconView />
+   </graphic>
+</DialogPane>

@@ -1,0 +1,3 @@
+- [x] Add `reloadWebview` to `WebRtcBridge.java`
+- [x] Modify `script.js` to call `reloadWebview` instead of showing overlay
+- [x] Verify changes

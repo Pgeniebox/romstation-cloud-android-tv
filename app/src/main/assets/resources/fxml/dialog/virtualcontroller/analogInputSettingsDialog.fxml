@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<DialogPane fx:id="dialogPane" id="analog-input-settings-dialog" headerText="%analogInputSettingsDialog.header"
+            xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.romstation.application.bR">
+    <content>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES"/>
+                <ColumnConstraints hgrow="SOMETIMES"/>
+                <ColumnConstraints prefWidth="50" halignment="RIGHT"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES"/>
+                <RowConstraints vgrow="SOMETIMES"/>
+                <RowConstraints vgrow="SOMETIMES"/>
+                <RowConstraints vgrow="SOMETIMES"/>
+                <RowConstraints vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Label text="%analogInputSettingsDialog.name"/>
+                <Label fx:id="nameLabel" GridPane.columnIndex="1"/>
+                <Label text="%analogInputSettingsDialog.command" GridPane.rowIndex="1"/>
+                <ComboBox fx:id="commandComboBox" prefWidth="200" maxWidth="Infinity" GridPane.columnIndex="1"
+                          GridPane.rowIndex="1"/>
+                <Label text="%analogInputSettingsDialog.sensitivity" GridPane.rowIndex="2"/>
+                <Slider fx:id="sensitivitySlider" min="0.5" max="2" blockIncrement="0.01" majorTickUnit="0.01"
+                        minorTickCount="0" snapToTicks="true" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label fx:id="sensitivityValueLabel" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+                <Label text="%analogInputSettingsDialog.deadZone" GridPane.rowIndex="3"/>
+                <Slider fx:id="deadZoneSlider" max="1" blockIncrement="0.01" majorTickUnit="0.01" minorTickCount="0"
+                        snapToTicks="true" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Label fx:id="deadZoneValueLabel" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+                <Label text="%analogInputSettingsDialog.state" GridPane.rowIndex="4"/>
+                <ProgressBar fx:id="stateProgressBar" maxWidth="1.7976931348623157E308" progress="0"
+                             GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <Label fx:id="stateValueLabel" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+            </children>
+        </GridPane>
+    </content>
+    <buttonTypes>
+        <ButtonType fx:constant="CLOSE"/>
+    </buttonTypes>
+</DialogPane>

@@ -1,0 +1,13 @@
+- [ ] Android Changes
+    - [ ] Modify `AndroidGamepadListener.java` to support dynamic settings
+    - [ ] Add `updateGamepadSettings` to `WebRtcReceiver.java`
+    - [ ] Add `setGamepadSettings` to `WebRtcBridge.java`
+- [ ] JavaScript Changes
+    - [ ] Add new setting definitions to `script.js`
+    - [ ] Add settings to `ALL_PREFS.stream`
+    - [ ] Add UI integration in `SettingsDialog`
+    - [ ] Add logic to sync settings with Java side
+- [ ] Verification
+    - [ ] Verify build
+    - [ ] Verify UI works
+    - [ ] Verify settings are applied to Java listener

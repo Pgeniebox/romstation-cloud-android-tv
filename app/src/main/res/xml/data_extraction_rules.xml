@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- Rules for Cloud Backup (Android 12+) -->
+    </cloud-backup>
+    <device-transfer>
+        <!-- Rules for Device-to-Device transfer (Android 12+) -->
+    </device-transfer>
+</data-extraction-rules>

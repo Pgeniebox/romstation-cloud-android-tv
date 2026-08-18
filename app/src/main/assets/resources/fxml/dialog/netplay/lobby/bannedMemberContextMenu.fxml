@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.MenuItem?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<ContextMenu fx:id="contextMenu" styleClass="banned-member" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.bt">
+  <items>
+    <MenuItem fx:id="profileMenuItem" styleClass="profile" mnemonicParsing="false" text="%serverLobbyDialog.blacklistTitledPane.contextMenu.profile" onAction="#showMemberProfile">
+      <graphic>
+        <FontAwesomeIconView/>
+      </graphic>
+    </MenuItem>
+    <MenuItem fx:id="unbanMenuItem" styleClass="unban" mnemonicParsing="false" text="%serverLobbyDialog.blacklistTitledPane.contextMenu.unban" onAction="#unbanPlayer">
+      <graphic>
+        <FontAwesomeIconView/>
+      </graphic>
+    </MenuItem>
+  </items>
+</ContextMenu>

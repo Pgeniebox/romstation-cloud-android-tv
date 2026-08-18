@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import org.romstation.application.view.control.PathField?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.StackPane?>
+<DialogPane fx:id="root" headerText="%legacyRomStationDirectoryChooserDialog.header" id="legacy-romstation-directory-chooser-dialog" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.be">
+   <graphic>
+       <FontAwesomeIconView/>
+   </graphic>
+    <buttonTypes>
+      <ButtonType fx:constant="CANCEL" />
+      <ButtonType fx:constant="OK" />
+   </buttonTypes>
+   <content>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints />
+            <RowConstraints minHeight="20" />
+          <RowConstraints />
+            <RowConstraints minHeight="10" />
+            <RowConstraints />
+        </rowConstraints>
+         <children>
+            <Label text="%legacyRomStationDirectoryChooserDialog.message" styleClass="message" GridPane.rowIndex="0" />
+             <PathField fx:id="pathField" onAction="#chooseDirectory" GridPane.rowIndex="2"/>
+             <StackPane styleClass="status-pane" GridPane.rowIndex="4">
+                 <Label fx:id="successLabel" text="%legacyRomStationDirectoryChooserDialog.status.success" styleClass="success" visible="false" maxWidth="Infinity">
+                     <graphic>
+                         <FontAwesomeIconView/>
+                     </graphic>
+                 </Label>
+                 <Label fx:id="errorLabel" text="%legacyRomStationDirectoryChooserDialog.status.error" styleClass="error" visible="false" maxWidth="Infinity">
+                     <graphic>
+                         <FontAwesomeIconView/>
+                     </graphic>
+                 </Label>
+             </StackPane>
+         </children>
+      </GridPane>
+   </content>
+</DialogPane>

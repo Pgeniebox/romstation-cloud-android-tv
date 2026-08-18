@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.romstation.application.view.control.SearchField?>
+<?import java.lang.*?>
+
+<BorderPane fx:id="root" id="emulators-view" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.view.controller.emulators.EmulatorsController">
+    <top>
+        <ToolBar>
+            <Button onAction="#create">
+                <styleClass>
+                    <String fx:value="add" />
+                    <String fx:value="transparent" />
+                </styleClass>
+                <tooltip>
+                    <Tooltip text="%emulators.add" />
+                </tooltip>
+                <graphic>
+                    <FontAwesomeIconView />
+                </graphic>
+            </Button>
+            <MenuButton>
+                <styleClass>
+                    <String fx:value="import" />
+                    <String fx:value="transparent" />
+                </styleClass>
+                <tooltip>
+                    <Tooltip text="%emulators.import" />
+                </tooltip>
+                <graphic>
+                    <FontAwesomeIconView />
+                </graphic>
+                <items>
+                    <MenuItem text="%emulators.import.legacy" onAction="#importLegacy" />
+                </items>
+            </MenuButton>
+            <Button onAction="#download">
+                <styleClass>
+                    <String fx:value="download" />
+                    <String fx:value="transparent" />
+                </styleClass>
+                <tooltip>
+                    <Tooltip text="%emulators.download" />
+                </tooltip>
+                <graphic>
+                    <FontAwesomeIconView />
+                </graphic>
+            </Button>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="searchResultLabel" styleClass="search-result">
+                <graphic>
+                    <FontAwesomeIconView />
+                </graphic>
+            </Label>
+            <SearchField fx:id="nameSearchField" styleClass="transparent" promptText="%emulators.search.promptText"/>
+        </ToolBar>
+    </top>
+    <left>
+        <fx:include fx:id="filters" source="filters.fxml" />
+    </left>
+    <center>
+        <StackPane fx:id="view" styleClass="view" HBox.hgrow="ALWAYS">
+            <children>
+                <fx:include fx:id="tableview" source="tableView.fxml" />
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>

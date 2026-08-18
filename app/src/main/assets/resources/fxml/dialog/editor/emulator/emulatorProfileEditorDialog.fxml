@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import org.romstation.application.view.control.PathField?>
+<DialogPane id="emulator-profile-editor-dialog" headerText="%emulatorProfileEditorDialog.header" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.romstation.application.aY">
+   <buttonTypes>
+      <ButtonType fx:constant="CANCEL" />
+      <ButtonType fx:constant="OK" />
+   </buttonTypes>
+   <content>
+       <ScrollPane fx:id="scrollPane">
+           <GridPane>
+               <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES"/>
+                   <ColumnConstraints hgrow="SOMETIMES"/>
+               </columnConstraints>
+               <rowConstraints>
+                   <RowConstraints/>
+                   <RowConstraints/>
+                   <RowConstraints/>
+                   <RowConstraints vgrow="ALWAYS"/>
+               </rowConstraints>
+               <children>
+                   <VBox styleClass="named-field">
+                       <Label text="%emulatorProfileEditorDialog.name"/>
+                       <TextField fx:id="nameTextField"/>
+                   </VBox>
+                   <VBox styleClass="named-field" GridPane.rowIndex="1">
+                       <Label text="%emulatorProfileEditorDialog.parameters"/>
+                       <TextField fx:id="parametersTextField"/>
+                   </VBox>
+                   <VBox styleClass="named-field" GridPane.columnIndex="1">
+                       <Label text="%emulatorProfileEditorDialog.path"/>
+                       <PathField fx:id="pathField" onAction="#selectPath" />
+                   </VBox>
+                   <VBox styleClass="named-field" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                       <Label text="%emulatorProfileEditorDialog.workingDirectory"/>
+                       <PathField fx:id="workingDirectoryField" onAction="#selectWorkingDirectory" />
+                   </VBox>
+                   <Separator GridPane.rowIndex="2" GridPane.columnSpan="2"/>
+                   <TabPane styleClass="floating" tabClosingPolicy="UNAVAILABLE" GridPane.rowIndex="3" GridPane.columnSpan="2">
+                       <tabs>
+                           <Tab text="%emulatorProfileEditorDialog.tab.systems">
+                               <fx:include fx:id="systems" source="/fxml/systemsPane.fxml"/>
+                           </Tab>
+                           <!--
+                           <Tab text="%emulatorProfileEditorDialog.tab.scripts">
+                               <fx:include source="emulatorProfileScriptsEditorPane.fxml"/>
+                           </Tab>
+                           -->
+                           <Tab text="%emulatorProfileEditorDialog.tab.metas">
+                               <fx:include fx:id="metas" source="/fxml/metasPane.fxml"/>
+                           </Tab>
+                       </tabs>
+                   </TabPane>
+               </children>
+           </GridPane>
+       </ScrollPane>
+   </content>
+   <graphic>
+      <FontAwesomeIconView />
+   </graphic>
+</DialogPane>

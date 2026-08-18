@@ -1,0 +1,9 @@
+- [x] Research Android TV Splash Screen limitations
+- [x] Create TV-specific theme override for API 33+ (icon_preferred + android: prefix)
+- [x] Create API 31+ theme override (android: prefix)
+- [x] Create API 31+ Night Mode theme override (values-night-v31)
+- [x] Update base splash screen theme with TV transition attributes and primary color
+- [x] Implement `setKeepOnScreenCondition` in `MainActivity` to ensure minimum visibility
+- [x] Scale splash icon to fit 192dp safe zone
+- [x] Add splash theme to night mode resources and fix lint prefixes
+- [x] Add `android:windowBackground` fallback to all splash themes

@@ -1,0 +1,5 @@
+- [ ] Improve logging and thread safety in `WebRtcReceiver.java`
+- [ ] Update `WebRtcBridge.java` to handle configuration exchange
+- [ ] Capture ICE configuration in `script.js`
+- [ ] Update `MainActivity.java` to use the captured configuration
+- [ ] Verify build succeeds
