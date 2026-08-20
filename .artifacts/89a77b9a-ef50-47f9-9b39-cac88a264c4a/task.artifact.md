@@ -1,5 +1,0 @@
-- [x] Update AGP version in `libs.versions.toml`
-- [x] Update Gradle version in `gradle-wrapper.properties`
-- [/] Perform Gradle Sync
-- [ ] Verify build with `./gradlew buildEnvironment`
-- [ ] Verify build with `./gradlew assembleDebug`

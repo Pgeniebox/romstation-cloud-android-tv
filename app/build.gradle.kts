@@ -1,4 +1,3 @@
-import org.gradle.internal.impldep.org.junit.experimental.categories.Categories.CategoryFilter.exclude
 
 plugins {
     alias(libs.plugins.android.application)
@@ -6,16 +5,25 @@ plugins {
 
 android {
     namespace = "com.world.cloudxsolution"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.world.cloudxsolution"
         minSdk = 29
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    splits {
+        abi {
+            isEnable = true
+            reset()
+            include("arm64-v8a", "armeabi-v7a")
+            isUniversalApk = false
+        }
     }
 
     buildTypes {
@@ -32,8 +40,8 @@ android {
 
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
@@ -46,8 +54,7 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     implementation(libs.gson)
     implementation(libs.okhttp)
-    implementation(libs.media3.exoplayer)
-    implementation(libs.media3.exoplayer.rtsp)
-    implementation(libs.media3.ui)
+    implementation(libs.libvlc)
     implementation(libs.androidx.core.splashscreen)
+    implementation("com.github.alexeyvasilyev:rtsp-client-android:5.7.1")
 }

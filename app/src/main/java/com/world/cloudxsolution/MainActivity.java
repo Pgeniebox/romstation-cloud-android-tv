@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
         settings.setMediaPlaybackRequiresUserGesture(false);
         settings.setUserAgentString("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36");
         webView.setWebViewClient(new WebViewClient() {
-           private String js ="document.querySelectorAll('#install_rs2').forEach(e=>e.remove());\n" +
-                   "if(document.body.dataset.pageid!=undefined&&document.body.dataset.pageid>0){"+
-                   "let cloudbtn = document.querySelector('.fa-download');\n" +
+            private String js ="document.querySelectorAll('#install_rs2').forEach(e=>e.remove());\n" +
+                    "if(document.body.dataset.pageid!=undefined&&document.body.dataset.pageid>0){"+
+                    "let cloudbtn = document.querySelector('.fa-download');\n" +
                     "cloudbtn.nextSibling.textContent=' Start Cloud Game';\n" +
                     "\n" +
                     "cloudbtn.parentElement.removeAttribute('href');\n" +
@@ -239,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
         webView.dispatchTouchEvent(upEvent);
         downEvent.recycle();
         upEvent.recycle();
+        virtualMouseView.pulseClick();
     }
 
     // --- add these fields ---
@@ -382,6 +383,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         isplaying=false;
         super.onResume();
+    }
+
+    @Override
+    public boolean dispatchGenericMotionEvent(MotionEvent event) {
+        // Must intercept here (before per-view dispatch), the same way dispatchKeyEvent
+        // intercepts buttons. If we wait for onGenericMotionEvent instead, the WebView
+        // gets first crack at the event and consumes left-stick motion itself as a page
+        // scroll (Chromium's built-in D-pad/joystick spatial-navigation panning), so our
+        // override below never even runs.
+        if (!isplaying
+                && (event.getSource() & InputDevice.SOURCE_JOYSTICK) == InputDevice.SOURCE_JOYSTICK
+                && event.getAction() == MotionEvent.ACTION_MOVE) {
+            stickX = event.getAxisValue(MotionEvent.AXIS_X);
+            stickY = event.getAxisValue(MotionEvent.AXIS_Y);
+            scrollX = event.getAxisValue(MotionEvent.AXIS_Z);   // right stick X on most gamepads
+            scrollY = event.getAxisValue(MotionEvent.AXIS_RZ);  // right stick Y on most gamepads
+            startInputLoop();
+            return true;
+        }
+        return super.dispatchGenericMotionEvent(event);
     }
 
     @Override

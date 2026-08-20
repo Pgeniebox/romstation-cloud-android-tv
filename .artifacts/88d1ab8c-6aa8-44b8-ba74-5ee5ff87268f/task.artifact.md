@@ -1,0 +1,16 @@
+- [x] Update `app/build.gradle.kts` to enable ABI splits
+- [x] Sync Gradle
+- [x] Build project and verify multiple APK generation
+- [x] Check final APK sizes
+- [x] Update `RomStationApi.createLobby` signature
+- [x] Create `dialog_lobby_options.xml` layout
+- [x] Implement dialog logic in `GameActivity`
+- [x] Propagate parameters through retry logic
+- [x] Implement dynamic API & VLC options UI
+- [x] Implement Persistence and Skip functionality
+- [/] Refactor Gamepad Mapping system
+    - [ ] Update `GamepadMapper.java` to use direct HashMaps
+    - [ ] Optimize `GameActivity.java` button/axis lookups
+    - [ ] Enhance D-pad support in `onGenericMotionEvent`
+    - [ ] Update mapping UI to support new structure
+- [ ] Verify build and functionality

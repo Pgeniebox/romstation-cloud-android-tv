@@ -1,0 +1,3 @@
+- [x] Implement "Max - 30ms" seek logic in `GameActivity.java`
+- [x] Remove unused `isInitialSeekDone` flag and logic
+- [x] Verify changes

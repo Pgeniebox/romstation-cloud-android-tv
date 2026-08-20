@@ -73,11 +73,11 @@ public class UdpController {
     }
 
     public void sendInput(byte buttons1, byte buttons2, byte lx, byte ly, byte l2, byte rx, byte ry, byte r2) {
-        sendCallCount++;
-        if (sendCallCount <= 5 || sendCallCount % 100 == 0) {
-            android.util.Log.d(TAG, "sendInput() called, count=" + sendCallCount
-                    + ", socket=" + socket + ", closed=" + closed + ", address=" + address);
-        }
+//        sendCallCount++;
+//        if (sendCallCount <= 5 || sendCallCount % 100 == 0) {
+//            android.util.Log.d(TAG, "sendInput() called, count=" + sendCallCount
+//                    + ", socket=" + socket + ", closed=" + closed + ", address=" + address);
+//        }
         try {
             boolean hasData = buttons1 != 0 || buttons2 != 0 || lx != 0 || ly != 0
                     || l2 != 0 || rx != 0 || ry != 0 || r2 != 0;

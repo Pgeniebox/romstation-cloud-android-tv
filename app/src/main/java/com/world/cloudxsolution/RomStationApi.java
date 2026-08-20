@@ -147,30 +147,23 @@ public class RomStationApi {
         request.startRequestNetwork(RequestNetworkController.GET, getUrlWithVersion("https://www.romstation.fr/romstation/scripts/game/get_infos.php"), "get_infos", listener);
     }
 
-    public void createLobby(String gameFileId, String title, RequestNetwork.RequestListener listener) {
+    public void createLobby(String gameFileId, String title, HashMap<String, Object> dynamicParams, RequestNetwork.RequestListener listener) {
         String auth = buildAuthJson();
         String authEncrypted = SecurityUtils.encrypt(auth);
         Log.d("RomStationApi", "Create Lobby Auth JSON: " + auth);
 
         RequestNetwork request = new RequestNetwork(activity);
         setRomStationHeaders(request);
+        
         HashMap<String, Object> params = new HashMap<>();
         params.put("auth", authEncrypted);
         params.put("title", title);
-        params.put("description", " ");
-        params.put("password", "");
-        params.put("slots", 1);
         params.put("game_file_id", gameFileId);
-        params.put("locked", 1);
-        params.put("live", 0);
-        params.put("instantiated", 0);
-        params.put("cloud", 1);
-        params.put("master_lobby_id", 0);
-        params.put("language", 1);
-        params.put("region", 0);
-        params.put("framerate", 30);
-        params.put("resolution", 0);
-        params.put("bitrate", 5000);
+        
+        // Add all dynamic parameters from UI
+        if (dynamicParams != null) {
+            params.putAll(dynamicParams);
+        }
 
         request.setParams(params, RequestNetworkController.REQUEST_PARAM);
         request.startRequestNetwork(RequestNetworkController.POST, getUrlWithVersion("https://www.romstation.fr/romstation/scripts/multiplayer/create_lobby.php"), "create_lobby", listener);
