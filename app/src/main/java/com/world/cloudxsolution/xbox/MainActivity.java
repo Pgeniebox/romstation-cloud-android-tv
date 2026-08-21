@@ -29,6 +29,7 @@ import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -303,8 +304,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean dispatchGenericMotionEvent(MotionEvent event) {
                 if (isStreaming) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                        View win =getWindow().getDecorView();
+                        win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_JOYSTICK);
+                        win.requestUnbufferedDispatch(event);
+                        win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_NONE);
+
+                    }
+
+
+
                     if ("unreliableinput".equals(activeInputChannel) && gamepadListener != null) {
-                        showCustomToast(gamepadListener.prepare(event.getDevice()));
+
+                    showCustomToast(gamepadListener.prepare(event.getDevice()));
                         if (gamepadListener.onGenericMotion(event)) return true;
                     } else if ("input".equals(activeInputChannel) && controllerLe != null) {
                         controllerLe.detectAxisLayout(event.getDevice());
@@ -325,6 +337,12 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
                 if (isStreaming) {
+
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                        View win =getWindow().getDecorView();
+                        win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_JOYSTICK);
+                        win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_NONE);
+                    }
                     if ("unreliableinput".equals(activeInputChannel) && gamepadListener != null) {
                         showCustomToast(gamepadListener.prepare(event.getDevice()));
                         if (event.getAction() == KeyEvent.ACTION_DOWN) {

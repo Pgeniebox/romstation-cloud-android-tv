@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.App.Starting" parent="ThemeOverlay.AppCompat.Dark">
+    <style name="Theme.App.Starting" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Customize your theme here. -->
 <!--        <item name="colorPrimary">#FF6200EE</item>-->
 <!--        <item name="colorPrimaryDark">#FF3700B3</item>-->
