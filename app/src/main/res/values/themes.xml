@@ -6,4 +6,8 @@
 <!--        <item name="colorPrimaryDark">#FF3700B3</item>-->
 <!--        <item name="colorAccent">#FF03DAC5</item>-->
     </style>
+
+    <style name="XboxDialogTheme" parent="Theme.Material3.Dark.Dialog" />
+    <style name="XboxToastTheme" parent="Theme.Material3.Dark.Dialog" />
+    <style name="XboxSwitchTheme" parent="Widget.Material3.CompoundButton.Switch" />
 </resources>

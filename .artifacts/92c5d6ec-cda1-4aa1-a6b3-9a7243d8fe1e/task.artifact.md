@@ -1,0 +1,7 @@
+- [x] Create `activity_selection.xml` layout
+- [x] Create `SelectionActivity.java`
+- [x] Update `AndroidManifest.xml`
+    - [x] Add `SelectionActivity` as LAUNCHER
+    - [x] Register Xbox `MainActivity`
+    - [x] Register Xbox `StreamingService`
+- [x] Verify build and navigation

@@ -40,12 +40,12 @@
     <!-- Required for Android 12 (API 31) and higher -->
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE"/>
     <!-- Required for scanning on older versions -->
-
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"/>
     <application
         android:allowBackup="true"
-        android:banner="@drawable/app_banner_b"
+        android:banner="@drawable/app_banner"
         android:fullBackupContent="@xml/backup_rules"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:icon="@mipmap/ic_launcher"
@@ -59,8 +59,20 @@
         android:hardwareAccelerated="true"
         android:largeHeap="true"
         >
+
         <activity
-            android:name=".MainActivity"
+            android:name=".SelectionActivity"
+            android:exported="true"
+            android:theme="@style/Theme.App.Starting">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".romstation.MainActivity"
             android:exported="true"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|screenLayout"
             android:launchMode="singleTask"
@@ -70,15 +82,25 @@
             <meta-data android:name="android.media.codec.low_latency" android:value="1"/>
             <meta-data android:name="com.amlogic.media.lowlatency" android:value="true"/>
             <meta-data android:name="vendor.low_latency" android:value="1"/>
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER"/>
-                <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
-                <category android:name="android.intent.category.GAME"/>
-            </intent-filter>
         </activity>
 
-        <activity android:name=".GameActivity"
+        <activity
+            android:name=".xbox.MainActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden|screenLayout"
+            android:launchMode="singleTask"
+            android:hardwareAccelerated="true"
+            android:theme="@style/Theme.App.Starting">
+            <meta-data android:name="android.media.codec.low_latency" android:value="1"/>
+        </activity>
+
+        <service
+            android:name=".xbox.StreamingService"
+            android:exported="false"
+            android:process=":stream"
+            android:foregroundServiceType="mediaProjection|connectedDevice" />
+
+        <activity android:name=".romstation.GameActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden|screenLayout"
             android:launchMode="singleTask"
             android:hardwareAccelerated="true"

@@ -38,6 +38,12 @@ android {
         aidl = true
     }
 
+    sourceSets {
+        getByName("main") {
+            res.srcDirs("src/main/res", "src/main/res-romstation", "src/main/res-xbox")
+        }
+    }
+
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -55,6 +61,7 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.okhttp)
     implementation(libs.libvlc)
+    implementation(libs.webrtc)
     implementation(libs.androidx.core.splashscreen)
     implementation("com.github.alexeyvasilyev:rtsp-client-android:5.7.1")
 }
