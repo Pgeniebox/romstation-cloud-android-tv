@@ -40,7 +40,7 @@ android {
 
     sourceSets {
         getByName("main") {
-            res.srcDirs("src/main/res", "src/main/res-romstation", "src/main/res-xbox")
+            res.srcDirs("src/main/res", "src/main/res-romstation", "src/main/res-xbox", "src/main/res-playstation")
         }
     }
 

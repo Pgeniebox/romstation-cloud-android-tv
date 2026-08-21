@@ -1,3 +1,2 @@
-- [x] Merge Romstation and Xbox README content
-- [x] Write unified `README.md`
-- [x] Create walkthrough artifact
+- [x] Update `StickTestView` package in `dialog_settings.xml`
+- [x] Verify build with `./gradlew assembleDebug`

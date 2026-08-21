@@ -1,19 +1,20 @@
-# Implementation Plan - Merge Romstation and Xbox READMEs
+# Implementation Plan - Fix Xbox Gamepad Settings Crash
 
-The user wants to merge the existing Romstation README with the Xbox README to reflect the new state of the project, which now supports both entry points.
+The user reports that the app crashes when attempting to open gamepad settings in the Xbox section. The investigation revealed that the `dialog_settings.xml` layout uses an incorrect package name for the `StickTestView` custom component, which leads to an `InflateException`.
 
 ## Proposed Changes
 
-### Documentation
+### Resource Fixes
 
-#### [MODIFY] [README.md](file:///E:/try/README.md)
-- Update the title to reflect the dual-cloud nature (e.g., "CloudX - Unified Cloud Gaming for Android TV").
-- Add a section about the new Launcher/Selection screen.
-- Merge the feature lists, distinguishing between Romstation (RTSP/Native Java) and Xbox (WebRTC/Native Handover).
-- Retain the detailed "Key Innovations" section from the Xbox README as it applies to the architectural philosophy of the project.
-- Keep the developed-by and acknowledgements sections.
+#### [MODIFY] [dialog_settings.xml](file:///E:/try/app/src/main/res-xbox/layout/dialog_settings.xml)
+- Update the package name for `StickTestView` from `com.world.cloudxsolution.StickTestView` to `com.world.cloudxsolution.xbox.StickTestView`.
 
 ## Verification Plan
 
+### Automated Tests
+- Run `./gradlew assembleDebug` to ensure the project still builds.
+
 ### Manual Verification
-- Review the merged README to ensure it is cohesive and covers both feature sets accurately.
+- Deploy the app and navigate to the Xbox section.
+- Open the Gamepad Settings dialog and verify it no longer crashes.
+- Verify that the stick visualizers (`StickTestView`) are displayed and functioning during testing.
