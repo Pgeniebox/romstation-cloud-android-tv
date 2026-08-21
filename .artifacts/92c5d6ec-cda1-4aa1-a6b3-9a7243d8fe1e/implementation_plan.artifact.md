@@ -1,32 +1,19 @@
-# Implementation Plan - Launcher Selection Screen
+# Implementation Plan - Merge Romstation and Xbox READMEs
 
-The goal is to create a new entry point for the application that allows the user to choose between "Romstation" and "Xbox" modes. This will involve creating a new activity, its layout, and updating the manifest to correctly handle the new flow and include all necessary components.
+The user wants to merge the existing Romstation README with the Xbox README to reflect the new state of the project, which now supports both entry points.
 
 ## Proposed Changes
 
-### New Activity
+### Documentation
 
-#### [NEW] [SelectionActivity.java](file:///E:/try/app/src/main/java/com/world/cloudxsolution/SelectionActivity.java)
-- A new `AppCompatActivity` that displays two options.
-- Clicking "Romstation" launches `com.world.cloudxsolution.romstation.MainActivity`.
-- Clicking "Xbox" launches `com.world.cloudxsolution.xbox.MainActivity`.
-
-#### [NEW] [activity_selection.xml](file:///E:/try/app/src/main/res/layout/activity_selection.xml)
-- A simple layout with two buttons or cards for selection.
-
-### Manifest Updates
-
-#### [MODIFY] [AndroidManifest.xml](file:///E:/try/app/src/main/AndroidManifest.xml)
-- Add `SelectionActivity` and make it the `LAUNCHER` activity.
-- Remove `LAUNCHER` intent filters from `com.world.cloudxsolution.romstation.MainActivity`.
-- Add `com.world.cloudxsolution.xbox.MainActivity`.
-- Add `com.world.cloudxsolution.xbox.StreamingService` with the required process and foreground service type.
+#### [MODIFY] [README.md](file:///E:/try/README.md)
+- Update the title to reflect the dual-cloud nature (e.g., "CloudX - Unified Cloud Gaming for Android TV").
+- Add a section about the new Launcher/Selection screen.
+- Merge the feature lists, distinguishing between Romstation (RTSP/Native Java) and Xbox (WebRTC/Native Handover).
+- Retain the detailed "Key Innovations" section from the Xbox README as it applies to the architectural philosophy of the project.
+- Keep the developed-by and acknowledgements sections.
 
 ## Verification Plan
 
-### Automated Tests
-- Run `./gradlew assembleDebug` to ensure everything compiles.
-
 ### Manual Verification
-- Deploy the app and verify the selection screen appears.
-- Test that both "Romstation" and "Xbox" buttons correctly launch their respective activities.
+- Review the merged README to ensure it is cohesive and covers both feature sets accurately.

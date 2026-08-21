@@ -1,7 +1,3 @@
-- [x] Create `activity_selection.xml` layout
-- [x] Create `SelectionActivity.java`
-- [x] Update `AndroidManifest.xml`
-    - [x] Add `SelectionActivity` as LAUNCHER
-    - [x] Register Xbox `MainActivity`
-    - [x] Register Xbox `StreamingService`
-- [x] Verify build and navigation
+- [x] Merge Romstation and Xbox README content
+- [x] Write unified `README.md`
+- [x] Create walkthrough artifact
