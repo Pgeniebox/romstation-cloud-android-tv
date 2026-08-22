@@ -296,27 +296,24 @@ public class MainActivity extends AppCompatActivity {
             boolean minTimeElapsed = (System.currentTimeMillis() - startTime) > 0;
             return !isReady || !minTimeElapsed;
         });
-
-
-
         getWindow().setCallback(new WindowCallbackWrapper(getWindow().getCallback()) {
 
             @Override
             public boolean dispatchGenericMotionEvent(MotionEvent event) {
                 if (isStreaming) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                        View win =getWindow().getDecorView();
+                        View win = getWindow().getDecorView();
                         win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_JOYSTICK);
-                        win.requestUnbufferedDispatch(event);
-                        win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_NONE);
-
                     }
 
-
-
                     if ("unreliableinput".equals(activeInputChannel) && gamepadListener != null) {
-
-                    showCustomToast(gamepadListener.prepare(event.getDevice()));
+                        // prepare() is already a cheap no-op once the same device is prepared
+                        // (descriptor check happens first thing inside it), so calling it per-event
+                        // is fine -- but only bother with the toast when it actually reconfigured.
+                        String prepareResult = gamepadListener.prepare(event.getDevice());
+                        if (!prepareResult.isEmpty()) {
+                            showCustomToast(prepareResult);
+                        }
                         if (gamepadListener.onGenericMotion(event)) return true;
                     } else if ("input".equals(activeInputChannel) && controllerLe != null) {
                         controllerLe.detectAxisLayout(event.getDevice());
@@ -337,14 +334,16 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
                 if (isStreaming) {
-
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                        View win =getWindow().getDecorView();
+                        View win = getWindow().getDecorView();
                         win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_JOYSTICK);
-                        win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_NONE);
                     }
+
                     if ("unreliableinput".equals(activeInputChannel) && gamepadListener != null) {
-                        showCustomToast(gamepadListener.prepare(event.getDevice()));
+                        String prepareResult = gamepadListener.prepare(event.getDevice());
+                        if (!prepareResult.isEmpty()) {
+                            showCustomToast(prepareResult);
+                        }
                         if (event.getAction() == KeyEvent.ACTION_DOWN) {
                             if (gamepadListener.onKeyDown(event.getKeyCode(), event)) return true;
                         } else if (event.getAction() == KeyEvent.ACTION_UP) {
@@ -361,8 +360,73 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return super.dispatchKeyEvent(event);
             }
-
         });
+
+
+//        getWindow().setCallback(new WindowCallbackWrapper(getWindow().getCallback()) {
+//
+//            @Override
+//            public boolean dispatchGenericMotionEvent(MotionEvent event) {
+//                if (isStreaming) {
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//                        View win =getWindow().getDecorView();
+//                        win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_JOYSTICK);
+//                        win.requestUnbufferedDispatch(event);
+//                        win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_NONE);
+//
+//                    }
+//
+//
+//
+//                    if ("unreliableinput".equals(activeInputChannel) && gamepadListener != null) {
+//
+//                    showCustomToast(gamepadListener.prepare(event.getDevice()));
+//                        if (gamepadListener.onGenericMotion(event)) return true;
+//                    } else if ("input".equals(activeInputChannel) && controllerLe != null) {
+//                        controllerLe.detectAxisLayout(event.getDevice());
+//                        if (controllerLe.onGenericMotion(event)) return true;
+//                    }
+//                }
+//                return super.dispatchGenericMotionEvent(event);
+//            }
+//
+//            @Override
+//            public boolean dispatchKeyEvent(KeyEvent event) {
+//                if (event.getKeyCode() == KeyEvent.KEYCODE_BUTTON_SELECT) {
+//                    isSelectPressed = event.getAction() == KeyEvent.ACTION_DOWN;
+//                }
+//                if (isSelectPressed && event.getKeyCode() == KeyEvent.KEYCODE_BUTTON_START
+//                        && event.getAction() == KeyEvent.ACTION_DOWN) {
+//                    showStreamingMenuDialog();
+//                    return true;
+//                }
+//                if (isStreaming) {
+//
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//                        View win =getWindow().getDecorView();
+//                        win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_JOYSTICK);
+//                        win.requestUnbufferedDispatch(InputDevice.SOURCE_CLASS_NONE);
+//                    }
+//                    if ("unreliableinput".equals(activeInputChannel) && gamepadListener != null) {
+//                        showCustomToast(gamepadListener.prepare(event.getDevice()));
+//                        if (event.getAction() == KeyEvent.ACTION_DOWN) {
+//                            if (gamepadListener.onKeyDown(event.getKeyCode(), event)) return true;
+//                        } else if (event.getAction() == KeyEvent.ACTION_UP) {
+//                            if (gamepadListener.onKeyUp(event.getKeyCode(), event)) return true;
+//                        }
+//                    } else if ("input".equals(activeInputChannel) && controllerLe != null) {
+//                        controllerLe.detectAxisLayout(event.getDevice());
+//                        if (event.getAction() == KeyEvent.ACTION_DOWN) {
+//                            if (controllerLe.onKeyDown(event.getKeyCode(), event)) return true;
+//                        } else if (event.getAction() == KeyEvent.ACTION_UP) {
+//                            if (controllerLe.onKeyUp(event.getKeyCode(), event)) return true;
+//                        }
+//                    }
+//                }
+//                return super.dispatchKeyEvent(event);
+//            }
+//
+//        });
 
         rootLayout = findViewById(R.id.rootLayout);
         surfaceView = findViewById(R.id.surfaceView);
